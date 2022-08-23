@@ -24,8 +24,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('cmf_resource_rest')
+        $treeBuilder = new TreeBuilder('cmf_resource_rest');
+        $treeBuilder->getRootNode()
             ->fixXmlConfig('payload_alias', 'payload_alias_map')
             ->children()
                 ->integerNode('max_depth')->defaultValue(2)->end()
